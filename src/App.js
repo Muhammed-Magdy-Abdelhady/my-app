@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect } from "react";
+import { useDispatch } from 'react-redux';
+import { asyncGetPosts } from './features/posts/PostsSlice';
+
+import Header from './components/header/Header';
+import CreateForm from './components/createForm/CreateForm';
+import Posts from './components/posts/posts';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+
+library.add(fas)
+
 
 function App() {
+  const [currentPostID, setCurrentPostID] = useState(0);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(asyncGetPosts());
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+        <CreateForm currentPostID={currentPostID} setCurrentPostID={setCurrentPostID}/>
+        <Posts setCurrentPostID={setCurrentPostID}/>
     </div>
   );
 }
