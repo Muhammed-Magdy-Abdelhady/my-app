@@ -25,8 +25,14 @@ function App() {
   return (
     <div className="App">
       <Header/>
-        <CreateForm currentPostID={currentPostID} setCurrentPostID={setCurrentPostID}/>
-        <Posts setCurrentPostID={setCurrentPostID}/>
+      <div className='row g-3'>
+        <div className='col-md-8'>
+          <Posts setCurrentPostID={setCurrentPostID}/>
+        </div>
+        <div className='col-md-4'>
+          <CreateForm currentPostID={currentPostID} setCurrentPostID={setCurrentPostID}/>
+        </div>
+      </div>
     </div>
   );
 }

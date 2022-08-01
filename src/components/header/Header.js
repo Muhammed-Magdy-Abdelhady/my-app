@@ -5,7 +5,7 @@ import './Header.css'
 const Header = () => {
     return (
         <div className="Header-theme">
-            <h1><FontAwesomeIcon icon="fa-solid fa-images" /> Header</h1>
+            <h1><FontAwesomeIcon icon="fa-solid fa-images" /> Posts</h1>
         </div>
     )
 }
