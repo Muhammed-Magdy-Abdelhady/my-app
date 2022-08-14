@@ -1,6 +1,9 @@
 .Header-theme{
     padding-left: 5%;
+    background-color: white;
     text-align: left;
-    /* color: white; */
-    /* background: #81E078; */
+    /* box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.69);
+    -webkit-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.69);
+    -moz-box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.69); */
+
 }
